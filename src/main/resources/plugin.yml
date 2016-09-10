@@ -1,0 +1,37 @@
+main: 'org.stormcraft.stormcore.StormCore'
+name: 'StormCore'
+version: '0.0.1'
+website: 'https://stormcrates.stormcraft.org/'
+depend:
+  - 'Essentials'
+
+softdepend:
+  - 'EssentialsX'
+
+authors:
+  - 'Symaercs'
+
+description: >
+  '§9§lStorm§6§lCrates §7is the core element and base of all §9§lStorm§6§lCraft§7 plugins.'
+  'This package contains libraries handling commands, configuration, logging and player interaction.'
+
+commands:
+  stormcore:
+    description: 'Main StormCore command'
+    usage: '/<command>'
+    aliases: []
+
+permissions:
+  stormcore.version:
+    description: 'View the version of StormCore running on this server'
+    default: false
+
+  stormcore.reload:
+    description: 'Reload the StormCore configuration files'
+    default: false
+
+  stormcore.*:
+    childeren:
+      stormcore.version: true
+      stormcore.reload: true
+    default: false
